@@ -1,0 +1,4 @@
+AircraftNo,Route,
+A1,F6–F4,
+A2,F3–F5,
+A3,F1–F2,

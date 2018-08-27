@@ -1,0 +1,4 @@
+CrewNo,Path,
+K1,F6–F4,
+K2,F3–F5,
+K3,F1–F2,

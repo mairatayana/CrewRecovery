@@ -1,5 +1,6 @@
 package analysis;
 
+import java.io.File;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +24,9 @@ public class CrewRecoveryTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		crewList = Mappers.mapFromFileToCrewInfo(Paths.get("crewInfo.txt"));		
-		connectionList = Mappers.mapFromFileToConnectionInfo(Paths.get("airplaneInfo.txt"));
-		flightList = Mappers.mapFromFileToFlightInfo(Paths.get("FlightInfo.txt"));
+		crewList = Mappers.mapFromFileToCrewInfo(Paths.get("resource"+File.separatorChar+"crewInfo.txt"));		
+		connectionList = Mappers.mapFromFileToConnectionInfo(Paths.get("resource"+File.separatorChar+"airplaneInfo.txt"));
+		flightList = Mappers.mapFromFileToFlightInfo(Paths.get("resource"+File.separatorChar+"FlightInfo.txt"));
 		fillCrewInfo(crewList,flightList);
 		
 	}
@@ -85,9 +86,9 @@ public class CrewRecoveryTest {
 	
 	@Test
 	public void testExample2() throws IloException {
-		List<CrewInfo> ex2crewList = Mappers.mapFromFileToCrewInfo(Paths.get("crewInfo_ex2.txt"));		
-		List<ConnectionInfo> ex2connectionList = Mappers.mapFromFileToConnectionInfo(Paths.get("airplaneInfo_ex2.txt"));
-		List<FlightInfo> ex2flightList = Mappers.mapFromFileToFlightInfo(Paths.get("FlightInfo_ex2.txt"));
+		List<CrewInfo> ex2crewList = Mappers.mapFromFileToCrewInfo(Paths.get("resource"+File.separatorChar+"crewInfo_ex2.txt"));		
+		List<ConnectionInfo> ex2connectionList = Mappers.mapFromFileToConnectionInfo(Paths.get("resource"+File.separatorChar+"airplaneInfo_ex2.txt"));
+		List<FlightInfo> ex2flightList = Mappers.mapFromFileToFlightInfo(Paths.get("resource"+File.separatorChar+"FlightInfo_ex2.txt"));
 		fillCrewInfo(ex2crewList,ex2flightList);
 		CrewRecovery cr = new CrewRecovery();
 		IloCplex cplex = cr.calculateRecovery(ex2crewList, ex2connectionList, ex2flightList, 4);
